@@ -1,0 +1,132 @@
+:root {
+
+    --dark: #020202;
+    --dark-soft: #19191a;
+    --light: #373739;
+    --skyblue: #60d4ea;
+    --softblue: #9ae5f3;
+    --white: #ffffff; /* Agregando una variable para blanco */
+  }
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--dark-soft);
+    display: flex;
+    justify-content: center;
+    
+}
+
+nav div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 900px;
+    height: 16vh;
+}
+
+
+nav div > ul > li  {
+    list-style-type: none;
+    display: inline;
+    padding: 20px;
+    position: relative;
+}
+
+a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+/* Submenú oculto por defecto */
+.submenu {
+    display: none;
+    position: absolute;
+    background-color: var(--softblue);
+    list-style-type: none;
+    top: 100%; /* Posicionar justo debajo del elemento principal */
+    left: 0;
+    margin: 0;
+    min-width: 150px; /* Ancho mínimo del submenú */
+    z-index: 1000;
+    padding: 0;
+}
+
+/* Estilo para los elementos del submenú */
+.submenu li {
+    min-width: 100%;
+    height: auto;
+    padding: 10px; /* Eliminamos el padding para que no afecte el tamaño del li */
+    margin: 0;  /* Eliminamos el margin para asegurarnos de que no afecte el tamaño */
+    display: flex; /* Flexbox para que el contenido (el enlace) ocupe todo el espacio */
+    align-items: center; /* Alineación vertical al centro */
+}
+
+/* Estilo para los enlaces del submenú */
+.submenu li a {
+    color: var(--dark);
+    text-decoration: none;
+    width: 100%; /* El enlace ocupa todo el ancho del li */
+    padding: 5px 10px; /* Añadimos padding al enlace en lugar del li */
+    display: block; /* Aseguramos que el enlace sea un bloque que ocupe todo el espacio disponible */
+}
+
+/* Pintar todo el espacio del li al hacer hover */
+.submenu li:hover {
+    background-color: var(--skyblue);
+}
+
+/* Mostrar el submenú al pasar el ratón por encima del elemento padre */
+nav div ul li:hover .submenu {
+    display: block;
+    
+}
+
+
+header {
+    height: 84vh;
+    background-image: url("../images/Fondo2.png");
+    background-size: cover;
+    position: relative;
+}
+
+header div {
+    position: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    padding: 20px 40px;
+    height: 30%;
+    background-color: var(--light);
+    width: 30%;
+    left: 15em;
+    top: 20em;
+    color: var(--white);
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    padding: 0 15em;
+}
+
+footer {
+    background-color: var(--dark);
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+}
